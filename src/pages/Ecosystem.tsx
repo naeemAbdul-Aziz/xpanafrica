@@ -1,21 +1,30 @@
 import React from 'react';
 import GlassPanel from '../components/GlassPanel';
 import KenteDivider from '../components/KenteDivider';
+import { Globe } from '@/components/ui/globe';
 
 const Ecosystem = () => {
   return (
     <main className="flex-grow z-10 w-full max-w-container-max mx-auto px-gutter pt-32 pb-margin-desktop">
       {/* Header Section */}
-      <div className="mb-16 md:mb-24 relative">
-        <div className="absolute -left-gutter w-1 h-full bg-secondary hidden md:block"></div>
-        <div className="md:pl-8">
-          <div className="font-label-md text-secondary uppercase tracking-[0.2em] mb-4">The Ecosystem</div>
-          <h1 className="font-headline-xl text-on-background mb-6">
-            One Architecture. <br/><span className="text-secondary/80">Infinite Scale.</span>
-          </h1>
-          <p className="font-body-lg text-on-surface-variant max-w-3xl">
-            Our product suite represents a unified financial operating system, meticulously engineered to resolve systemic friction across emerging markets. Each protocol is a standalone powerhouse; together, they form an unbreakable architecture.
-          </p>
+      <div className="mb-16 md:mb-24 relative flex flex-col lg:flex-row items-center gap-12">
+        <div className="relative lg:w-1/2">
+          <div className="absolute -left-gutter w-1 h-full bg-secondary hidden md:block"></div>
+          <div className="md:pl-8">
+            <div className="font-label-md text-secondary uppercase tracking-[0.2em] mb-4">The Ecosystem</div>
+            <h1 className="font-headline-xl text-on-background mb-6">
+              One Architecture. <br/><span className="text-secondary/80">Infinite Scale.</span>
+            </h1>
+            <p className="font-body-lg text-on-surface-variant max-w-3xl">
+              Our product suite represents a unified financial operating system, meticulously engineered to resolve systemic friction across emerging markets. Each protocol is a standalone powerhouse; together, they form an unbreakable architecture.
+            </p>
+          </div>
+        </div>
+
+        {/* Globe Visualization */}
+        <div className="relative flex w-full lg:w-1/2 items-center justify-center overflow-hidden rounded-lg min-h-[400px]">
+          <Globe className="top-8 opacity-80" />
+          <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(16,20,21,0.2),rgba(16,20,21,0.8))]" />
         </div>
       </div>
 
