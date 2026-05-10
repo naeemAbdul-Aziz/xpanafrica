@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 
 const TopNavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,10 +15,10 @@ const TopNavBar = () => {
 
   return (
     <>
-      <header className="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto bg-surface/80 backdrop-blur-md border-b border-outline/30 shadow-sm">
-        <NavLink to="/" className="font-headline-md text-secondary font-bold tracking-tighter">
+      <header className="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+        <div className="font-headline-md text-secondary font-bold tracking-tighter">
           XLABS
-        </NavLink>
+        </div>
 
         <nav className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
@@ -39,11 +38,9 @@ const TopNavBar = () => {
           ))}
         </nav>
 
-        <a href="mailto:info@xlabsghana.com" className="hidden md:block">
-          <Button variant="secondary" className="font-label-md uppercase tracking-wider scale-95 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]">
-            Request Deck →
-          </Button>
-        </a>
+        <button className="hidden md:block bg-secondary-container text-primary-container px-6 py-2 rounded font-label-md uppercase tracking-wider hover:bg-secondary transition-colors shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] scale-95 active:opacity-80 transition-transform">
+          Request Deck
+        </button>
 
         <button
           className="md:hidden text-secondary"
@@ -72,11 +69,9 @@ const TopNavBar = () => {
               {link.name}
             </NavLink>
           ))}
-          <a href="mailto:info@xlabsghana.com" className="mt-8 w-full block">
-            <Button variant="secondary" className="font-label-md uppercase tracking-wider w-full py-6">
-              Request Deck →
-            </Button>
-          </a>
+          <button className="mt-8 bg-secondary-container text-primary-container px-6 py-4 rounded font-label-md uppercase tracking-wider w-full">
+            Request Deck
+          </button>
         </div>
       )}
     </>
@@ -85,20 +80,26 @@ const TopNavBar = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-surface-container-lowest text-secondary font-body-md border-t-2 border-secondary/20 w-full mt-auto py-12 px-gutter z-10 relative">
-      <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="flex flex-col justify-between">
-          <div>
-            <span className="font-headline-sm text-on-surface font-bold block mb-2">XLABS Ghana — Fintech Hub Division</span>
-            <p className="text-on-surface-variant text-sm mb-1">Series A · $1B · 2026</p>
-            <p className="text-on-surface-variant text-sm mb-1">Academic Partners: MIT RAISE · COMPSSA</p>
-            <p className="text-on-surface-variant text-sm mt-4">
-              <a href="mailto:info@xlabsghana.com" className="hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200">
-                info@xlabsghana.com
-              </a>
-            </p>
-          </div>
+    <footer className="bg-surface-container-lowest text-secondary font-body-md border-t-2 border-secondary/20 w-full mt-auto py-12 px-gutter max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 z-10 relative">
+      <div className="col-span-1 md:col-span-1 flex flex-col justify-between">
+        <div>
+          <span className="font-headline-sm text-on-surface font-bold block mb-4">XLABS</span>
+          <p className="text-on-surface-variant text-sm">
+            Institutional Innovation.<br />
+            Architecting sovereign financial structures.
+          </p>
         </div>
+        <div className="font-body-md text-body-md text-on-surface-variant text-sm mt-4 md:mt-0">
+          © 2024 XLABS Institutional Innovation. All rights reserved.
+        </div>
+      </div>
+
+      <div className="col-span-1 md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 justify-start md:justify-end items-end">
+        <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200" href="#">Academic Partnerships</a>
+        <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200" href="#">Contact</a>
+        <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200" href="#">Legal Status</a>
+        <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200" href="#">Privacy Policy</a>
+        <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200" href="#">Regulatory Framework</a>
       </div>
     </footer>
   );
