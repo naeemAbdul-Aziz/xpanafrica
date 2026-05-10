@@ -1,4 +1,5 @@
 import React from 'react';
+import GlassPanel from '../components/GlassPanel';
 import KenteDivider from '../components/KenteDivider';
 
 const Founders = () => {
@@ -16,63 +17,87 @@ const Founders = () => {
 
         <KenteDivider className="mb-16" altStyle />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-8 items-end min-h-[600px] mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Team Member 1 */}
-          <div className="flex flex-col relative w-full h-[500px] rounded-t-full bg-secondary/80 text-background overflow-hidden group md:mb-12">
-            <div className="pt-12 px-6 text-center z-20">
-              <h3 className="font-headline-md font-bold uppercase tracking-wider mb-1 text-on-secondary">Bright Yaw Habada</h3>
-              <p className="font-label-md text-on-secondary/80 mb-4">Co-Founder · Product &amp; Strategy</p>
-              <p className="font-body-sm text-on-secondary/90 leading-snug">
-                Architect of the ten-product interconnected financial OS.
-              </p>
-            </div>
-
-            <div className="absolute bottom-0 w-full h-2/3 mt-auto">
+          <GlassPanel className="p-8 flex flex-col relative overflow-hidden group border-outline/20 hover:border-secondary/30 transition-colors">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-surface-container-lowest/80 z-10"></div>
+            <div className="w-full h-64 bg-surface-container-high rounded-lg mb-6 overflow-hidden absolute top-0 left-0">
               <img
                 alt="Bright Yaw Habada"
-                className="w-full h-full object-cover object-top grayscale contrast-125 mix-blend-multiply"
+                className="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105 transform"
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop"
               />
             </div>
-          </div>
+
+            <div className="relative z-20 mt-48 flex-grow flex flex-col">
+              <h3 className="font-headline-lg text-on-surface mb-1">Bright Yaw Habada</h3>
+              <p className="font-label-md text-secondary uppercase tracking-widest mb-4">Co-Founder · Product &amp; Strategy</p>
+
+              <p className="font-body-md text-on-surface-variant mb-6 flex-grow">
+                Architect of the ten-product interconnected financial OS. Leads product vision and go-to-market strategy for the entire X-Ecosystem across 54 markets.
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-auto">
+                <span className="px-3 py-1 bg-surface-container-lowest border border-outline/20 rounded font-label-md text-xs text-on-surface-variant">Product</span>
+                <span className="px-3 py-1 bg-surface-container-lowest border border-outline/20 rounded font-label-md text-xs text-on-surface-variant">Strategy</span>
+                <span className="px-3 py-1 bg-surface-container-lowest border border-outline/20 rounded font-label-md text-xs text-on-surface-variant">Vision</span>
+              </div>
+            </div>
+          </GlassPanel>
 
           {/* Team Member 2 */}
-          <div className="flex flex-col relative w-full h-[550px] rounded-t-full bg-[#cbd5e1] text-background overflow-hidden group">
-            <div className="pt-16 px-6 text-center z-20">
-              <h3 className="font-headline-md font-bold uppercase tracking-wider mb-1 text-slate-900">Derrick Debrah</h3>
-              <p className="font-label-md text-slate-700 mb-4">Co-Founder · Engineering</p>
-              <p className="font-body-sm text-slate-800 leading-snug">
-                Leads all technical architecture across the Finly shared backend.
-              </p>
-            </div>
-
-            <div className="absolute bottom-0 w-full h-2/3 mt-auto">
+          <GlassPanel className="p-8 flex flex-col relative overflow-hidden group border-outline/20 hover:border-secondary/30 transition-colors">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-surface-container-lowest/80 z-10"></div>
+            <div className="w-full h-64 bg-surface-container-high rounded-lg mb-6 overflow-hidden absolute top-0 left-0">
               <img
                 alt="Derrick Debrah"
-                className="w-full h-full object-cover object-top grayscale contrast-125 mix-blend-multiply"
+                className="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105 transform"
                 src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop"
               />
             </div>
-          </div>
+
+            <div className="relative z-20 mt-48 flex-grow flex flex-col">
+              <h3 className="font-headline-lg text-on-surface mb-1">Derrick Debrah</h3>
+              <p className="font-label-md text-secondary uppercase tracking-widest mb-4">Co-Founder · Engineering</p>
+
+              <p className="font-body-md text-on-surface-variant mb-6 flex-grow">
+                Leads all technical architecture across the Finly shared backend. Built the award-winning P-Levy MVP and Fin-Wrapped SDK — both live, both winning, both scaling.
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-auto">
+                <span className="px-3 py-1 bg-surface-container-lowest border border-outline/20 rounded font-label-md text-xs text-on-surface-variant">Engineering</span>
+                <span className="px-3 py-1 bg-surface-container-lowest border border-outline/20 rounded font-label-md text-xs text-on-surface-variant">Architecture</span>
+                <span className="px-3 py-1 bg-surface-container-lowest border border-outline/20 rounded font-label-md text-xs text-on-surface-variant">Backend</span>
+              </div>
+            </div>
+          </GlassPanel>
 
           {/* Team Member 3 */}
-          <div className="flex flex-col relative w-full h-[450px] rounded-t-full bg-[#fcd34d] text-background overflow-hidden group md:mb-24">
-            <div className="pt-10 px-6 text-center z-20">
-              <h3 className="font-headline-md font-bold uppercase tracking-wider mb-1 text-amber-900">Iyad-Deen Fuseini</h3>
-              <p className="font-label-md text-amber-800 mb-4">Co-Founder · Development</p>
-              <p className="font-body-sm text-amber-900 leading-snug">
-                Drives full-stack development and systems integration.
-              </p>
-            </div>
-
-            <div className="absolute bottom-0 w-full h-2/3 mt-auto">
+          <GlassPanel className="p-8 flex flex-col relative overflow-hidden group border-outline/20 hover:border-secondary/30 transition-colors">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-surface-container-lowest/80 z-10"></div>
+            <div className="w-full h-64 bg-surface-container-high rounded-lg mb-6 overflow-hidden absolute top-0 left-0">
               <img
                 alt="Iyad-Deen Fuseini"
-                className="w-full h-full object-cover object-top grayscale contrast-125 mix-blend-multiply"
+                className="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105 transform"
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop"
               />
             </div>
-          </div>
+
+            <div className="relative z-20 mt-48 flex-grow flex flex-col">
+              <h3 className="font-headline-lg text-on-surface mb-1">Iyad-Deen Fuseini</h3>
+              <p className="font-label-md text-secondary uppercase tracking-widest mb-4">Co-Founder · Development</p>
+
+              <p className="font-body-md text-on-surface-variant mb-6 flex-grow">
+                Drives full-stack development and systems integration. Ensures offline-first, AI-native principles are embedded in every X-product from the ground up — not patched in after.
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-auto">
+                <span className="px-3 py-1 bg-surface-container-lowest border border-outline/20 rounded font-label-md text-xs text-on-surface-variant">Full-Stack</span>
+                <span className="px-3 py-1 bg-surface-container-lowest border border-outline/20 rounded font-label-md text-xs text-on-surface-variant">Integration</span>
+                <span className="px-3 py-1 bg-surface-container-lowest border border-outline/20 rounded font-label-md text-xs text-on-surface-variant">AI Systems</span>
+              </div>
+            </div>
+          </GlassPanel>
         </div>
       </section>
     </main>
