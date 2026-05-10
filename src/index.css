@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL,GRAD,opsz@100..700,0..1,0,24&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-on-background min-h-screen font-body-md antialiased;
+  }
+}
+
+@layer utilities {
+  .kente-bg {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 8px 8px;
+  }
+
+  .kente-pattern {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 8px 8px;
+  }
+
+  .kente-stitch {
+    background: repeating-linear-gradient(90deg, var(--tw-colors-secondary) 0, var(--tw-colors-secondary) 2px, var(--tw-colors-primary-container) 2px, var(--tw-colors-primary-container) 4px);
+  }
+
+  .kente-stitch-alt {
+    background-image: repeating-linear-gradient(to right, #ffdb9d 0, #ffdb9d 2px, #0f172a 2px, #0f172a 4px);
+  }
+
+  .glass-panel {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-modal {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 40px -10px rgba(255, 184, 0, 0.1);
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
