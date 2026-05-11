@@ -38,9 +38,9 @@ const TopNavBar = () => {
           ))}
         </nav>
 
-        <button className="hidden md:block bg-secondary-container text-primary-container px-6 py-2 rounded font-label-md uppercase tracking-wider hover:bg-secondary transition-colors shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] scale-95 active:opacity-80 transition-transform">
+        <a href="mailto:info@xlabsghana.com" className="hidden md:block bg-secondary-container text-primary-container px-6 py-2 rounded font-label-md uppercase tracking-wider hover:bg-secondary transition-colors shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] scale-95 active:opacity-80 transition-transform">
           Request Deck
-        </button>
+        </a>
 
         <button
           className="md:hidden text-secondary"
@@ -69,9 +69,9 @@ const TopNavBar = () => {
               {link.name}
             </NavLink>
           ))}
-          <button className="mt-8 bg-secondary-container text-primary-container px-6 py-4 rounded font-label-md uppercase tracking-wider w-full">
+          <a href="mailto:info@xlabsghana.com" className="mt-8 bg-secondary-container text-primary-container px-6 py-4 rounded font-label-md uppercase tracking-wider w-full text-center">
             Request Deck
-          </button>
+          </a>
         </div>
       )}
     </>
@@ -83,23 +83,18 @@ const Footer = () => {
     <footer className="bg-surface-container-lowest text-secondary font-body-md border-t-2 border-secondary/20 w-full mt-auto py-12 px-gutter max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 z-10 relative">
       <div className="col-span-1 md:col-span-1 flex flex-col justify-between">
         <div>
-          <span className="font-headline-sm text-on-surface font-bold block mb-4">XLABS</span>
+          <span className="font-headline-sm text-on-surface font-bold block mb-4">XLABS Ghana — Fintech Hub Division</span>
           <p className="text-on-surface-variant text-sm">
-            Institutional Innovation.<br />
-            Architecting sovereign financial structures.
+            Series A · $1B · 2026
           </p>
         </div>
         <div className="font-body-md text-body-md text-on-surface-variant text-sm mt-4 md:mt-0">
-          © 2024 XLABS Institutional Innovation. All rights reserved.
+          info@xlabsghana.com
         </div>
       </div>
 
       <div className="col-span-1 md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 justify-start md:justify-end items-end">
-        <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200" href="#">Academic Partnerships</a>
-        <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200" href="#">Contact</a>
-        <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200" href="#">Legal Status</a>
-        <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200" href="#">Privacy Policy</a>
-        <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-secondary/50 transition-opacity duration-200" href="#">Regulatory Framework</a>
+        <span className="font-body-md text-body-md text-on-surface-variant">Academic Partners: MIT RAISE · COMPSSA</span>
       </div>
     </footer>
   );

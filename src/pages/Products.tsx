@@ -3,7 +3,7 @@ import GlassPanel from '../components/GlassPanel';
 import KenteDivider from '../components/KenteDivider';
 import { Globe } from '@/components/ui/globe';
 
-const Ecosystem = () => {
+const Products = () => {
   return (
     <main className="flex-grow z-10 w-full max-w-container-max mx-auto px-gutter pt-32 pb-margin-desktop">
       {/* Header Section */}
@@ -160,18 +160,9 @@ const Ecosystem = () => {
             </div>
           </div>
           <h3 className="font-headline-md text-on-surface mb-2 z-10">Xlevy</h3>
-          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Sovereign-grade digital taxation protocol designed for central banking systems and national revenue authorities.</p>
+          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Every purchase, an investment in Ghana. Micro-investment infrastructure that pipelines consumer spending directly to Ghana Stock Exchange-listed companies. Every Ghanaian becomes a shareholder.</p>
           <div className="border-t border-outline-variant/30 pt-4 z-10">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Target TAM</div>
-                <div className="font-body-lg text-secondary">$8.9B</div>
-              </div>
-              <div>
-                <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Integration</div>
-                <div className="font-body-md text-on-surface">P-Levy</div>
-              </div>
-            </div>
+            <p className="font-label-md text-sm text-secondary/80 italic">GSE listing prep active · Regulatory engagement underway</p>
           </div>
           <span className="material-symbols-outlined absolute bottom-4 right-4 text-9xl text-on-surface/5 -rotate-12 pointer-events-none">gavel</span>
         </GlassPanel>
@@ -182,24 +173,83 @@ const Ecosystem = () => {
             <div className="font-label-md text-on-surface-variant bg-surface-container-high px-3 py-1 rounded">P-06</div>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-surface-variant shadow-[0_0_8px_rgba(255,255,255,0.2)]"></span>
-              <span className="font-label-md text-on-surface uppercase text-xs">Concept</span>
+              <span className="font-label-md text-on-surface uppercase text-xs">Design Phase</span>
             </div>
           </div>
           <h3 className="font-headline-md text-on-surface mb-2 z-10">Expogen</h3>
-          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Algorithmic risk assessment engine leveraging AI to predict systemic financial exposure in volatile markets.</p>
+          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Ghana's products in every African market. AfCFTA-compliant export facilitation connecting Ghanaian producers across all 54 countries — the trade infrastructure the continent was promised under AfCFTA.</p>
           <div className="border-t border-outline-variant/30 pt-4 z-10">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Target TAM</div>
-                <div className="font-body-lg text-secondary">$5.1B</div>
-              </div>
-              <div>
-                <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Integration</div>
-                <div className="font-body-md text-on-surface">Core OS</div>
-              </div>
-            </div>
+            <p className="font-label-md text-sm text-secondary/80 italic">TAM: $8.2T under AfCFTA · First-mover in compliant pan-African export tech</p>
           </div>
           <span className="material-symbols-outlined absolute bottom-4 right-4 text-9xl text-on-surface/5 -rotate-12 pointer-events-none">memory</span>
+        </GlassPanel>
+
+        {/* Xhomes */}
+        <GlassPanel className="group relative p-6 hover:border-secondary/40 transition-all duration-500 flex flex-col h-full overflow-hidden">
+          <div className="flex justify-between items-start mb-6 z-10">
+            <div className="font-label-md text-on-surface-variant bg-surface-container-high px-3 py-1 rounded">P-07</div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-surface-variant shadow-[0_0_8px_rgba(255,255,255,0.2)]"></span>
+              <span className="font-label-md text-on-surface uppercase text-xs">Design Phase</span>
+            </div>
+          </div>
+          <h3 className="font-headline-md text-on-surface mb-2 z-10">Xhomes</h3>
+          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Diaspora capital, redirected. Premium AI-designed homes where every purchase funds a new XLABS learning centre. 3M+ Ghanaians abroad building wealth at home instead of abroad.</p>
+          <div className="border-t border-outline-variant/30 pt-4 z-10">
+            <p className="font-label-md text-sm text-secondary/80 italic">Diaspora pipeline: 3M+ Ghanaians · $4B+ annual remittances to redirect</p>
+          </div>
+          <span className="material-symbols-outlined absolute bottom-4 right-4 text-9xl text-on-surface/5 -rotate-12 pointer-events-none">real_estate_agent</span>
+        </GlassPanel>
+
+        {/* X Shorts */}
+        <GlassPanel className="group relative p-6 hover:border-secondary/40 transition-all duration-500 flex flex-col h-full overflow-hidden">
+          <div className="flex justify-between items-start mb-6 z-10">
+            <div className="font-label-md text-on-surface-variant bg-surface-container-high px-3 py-1 rounded">P-08</div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-surface-variant shadow-[0_0_8px_rgba(255,255,255,0.2)]"></span>
+              <span className="font-label-md text-on-surface uppercase text-xs">Design Phase</span>
+            </div>
+          </div>
+          <h3 className="font-headline-md text-on-surface mb-2 z-10">X Shorts</h3>
+          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">TikTok meets Pinterest, built for African commerce. The first commerce-native short-form video platform on the continent — where watching becomes buying and buying builds community equity.</p>
+          <div className="border-t border-outline-variant/30 pt-4 z-10">
+            <p className="font-label-md text-sm text-secondary/80 italic">Integration: Xcommerce checkout · Creator monetisation via Xlevy</p>
+          </div>
+          <span className="material-symbols-outlined absolute bottom-4 right-4 text-9xl text-on-surface/5 -rotate-12 pointer-events-none">movie</span>
+        </GlassPanel>
+
+        {/* Xvends */}
+        <GlassPanel className="group relative p-6 hover:border-secondary/40 transition-all duration-500 flex flex-col h-full overflow-hidden">
+          <div className="flex justify-between items-start mb-6 z-10">
+            <div className="font-label-md text-on-surface-variant bg-surface-container-high px-3 py-1 rounded">P-09</div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-surface-variant shadow-[0_0_8px_rgba(255,255,255,0.2)]"></span>
+              <span className="font-label-md text-on-surface uppercase text-xs">Design Phase</span>
+            </div>
+          </div>
+          <h3 className="font-headline-md text-on-surface mb-2 z-10">Xvends</h3>
+          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Organic Ghanaian vending machines in every XLABS school, university, hospital, and corporate campus. The physical retail arm of Xcommerce — bringing the digital flywheel into the real world.</p>
+          <div className="border-t border-outline-variant/30 pt-4 z-10">
+            <p className="font-label-md text-sm text-secondary/80 italic">Pilot: 10 units · Scale target: every XLABS-partnered institution</p>
+          </div>
+          <span className="material-symbols-outlined absolute bottom-4 right-4 text-9xl text-on-surface/5 -rotate-12 pointer-events-none">kitchen</span>
+        </GlassPanel>
+
+        {/* DiscreetKit */}
+        <GlassPanel className="group relative p-6 hover:border-secondary/40 transition-all duration-500 flex flex-col h-full overflow-hidden">
+          <div className="flex justify-between items-start mb-6 z-10">
+            <div className="font-label-md text-on-surface-variant bg-surface-container-high px-3 py-1 rounded">P-10</div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-surface-variant shadow-[0_0_8px_rgba(255,255,255,0.2)]"></span>
+              <span className="font-label-md text-on-surface uppercase text-xs">Concept Architecture</span>
+            </div>
+          </div>
+          <h3 className="font-headline-md text-on-surface mb-2 z-10">DiscreetKit</h3>
+          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Ghana's first AI-powered pharmacy. Computer vision medication verification for OTC access — addressing the structural crisis of 1 pharmacist per 12,000 Ghanaians with software, not headcount.</p>
+          <div className="border-t border-outline-variant/30 pt-4 z-10">
+            <p className="font-label-md text-sm text-secondary/80 italic">Ghana pharmacist ratio: 1:12,000 · AI verification pipeline in architecture</p>
+          </div>
+          <span className="material-symbols-outlined absolute bottom-4 right-4 text-9xl text-on-surface/5 -rotate-12 pointer-events-none">local_pharmacy</span>
         </GlassPanel>
 
       </div>
@@ -207,4 +257,4 @@ const Ecosystem = () => {
   );
 };
 
-export default Ecosystem;
+export default Products;
