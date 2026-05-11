@@ -40,22 +40,13 @@ const Products = () => {
             <div className="font-label-md text-on-surface-variant bg-surface-container-high px-3 py-1 rounded">P-01</div>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-              <span className="font-label-md text-on-surface uppercase text-xs">Live</span>
+              <span className="font-label-md text-on-surface uppercase text-xs ml-2">Live · Hackathon Winner</span>
             </div>
           </div>
           <h3 className="font-headline-md text-on-surface mb-2 z-10">P-Levy</h3>
-          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Automated institutional tax reconciliation and compliance engine for decentralized ledger systems.</p>
+          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Silent automated wealth-building for every Ghanaian. Routes a micro-percentage of every MoMo transaction into structured savings and micro-investments. The E-Levy mechanism reversed — serving the people who fund it.</p>
           <div className="border-t border-outline-variant/30 pt-4 z-10">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Target TAM</div>
-                <div className="font-body-lg text-secondary">$4.2B</div>
-              </div>
-              <div>
-                <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Integration</div>
-                <div className="font-body-md text-on-surface">Core OS</div>
-              </div>
-            </div>
+            <p className="font-label-md text-sm text-secondary/80 italic">Target: ₵2.4B/year at 5% MoMo penetration · 17M+ users in reach</p>
           </div>
           <span className="material-symbols-outlined absolute bottom-4 right-4 text-9xl text-on-surface/5 -rotate-12 pointer-events-none">account_balance</span>
         </GlassPanel>
@@ -66,25 +57,16 @@ const Products = () => {
           <div className="flex justify-between items-start mb-6 z-10">
             <div className="font-label-md text-on-surface-variant bg-surface-container-high px-3 py-1 rounded">P-02</div>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span>
-              <span className="font-label-md text-on-surface uppercase text-xs">In Development</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+              <span className="font-label-md text-on-surface uppercase text-xs ml-2">Live · Award-Winning SDK</span>
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-8 h-full z-10">
             <div className="flex flex-col">
               <h3 className="font-headline-md text-on-surface mb-2">Fin-Wrapped</h3>
-              <p className="font-body-md text-on-surface-variant mb-8 flex-grow">Cross-border synthetic asset protocol enabling seamless fiat-to-digital representations with provable 1:1 state-backed reserves.</p>
+              <p className="font-body-md text-on-surface-variant mb-8 flex-grow">Spotify Wrapped for your finances. AI-driven financial intelligence as a white-label SDK — integrates into banks and MoMo providers to deliver hyper-personalised insights at scale.</p>
               <div className="border-t border-outline-variant/30 pt-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Target TAM</div>
-                    <div className="font-body-lg text-secondary">$12.8B</div>
-                  </div>
-                  <div>
-                    <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Integration</div>
-                    <div className="font-body-md text-on-surface">Xcommerce</div>
-                  </div>
-                </div>
+                <p className="font-label-md text-sm text-secondary/80 italic">B2B pipeline: GCB · Absa Ghana · Fidelity · MTN</p>
               </div>
             </div>
             <div className="hidden md:flex items-center justify-center bg-surface-container-low rounded border border-outline-variant/20 p-4 relative overflow-hidden">
@@ -103,23 +85,14 @@ const Products = () => {
           <div className="flex justify-between items-start mb-6 z-10">
             <div className="font-label-md text-on-surface-variant bg-surface-container-high px-3 py-1 rounded">P-03</div>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-              <span className="font-label-md text-on-surface uppercase text-xs">Live</span>
+              <span className="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span>
+              <span className="font-label-md text-on-surface uppercase text-xs ml-2">In Development</span>
             </div>
           </div>
           <h3 className="font-headline-md text-on-surface mb-2 z-10">Finly</h3>
-          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Micro-lending infrastructure utilizing alternative data modeling to underwrite underserved SME segments.</p>
+          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">The financial brain of Ghana's informal economy. Inventory, sales, and AI analytics for 2.8M+ informal SMEs that power 80% of Ghana's GDP — offline-first, MoMo-native, built to scale across Africa.</p>
           <div className="border-t border-outline-variant/30 pt-4 z-10">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Target TAM</div>
-                <div className="font-body-lg text-secondary">$1.5B</div>
-              </div>
-              <div>
-                <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Integration</div>
-                <div className="font-body-md text-on-surface">P-Levy</div>
-              </div>
-            </div>
+            <p className="font-label-md text-sm text-secondary/80 italic">TAM: 2.8M+ Ghanaian informal SMEs · Continent-wide expansion architecture</p>
           </div>
           <span className="material-symbols-outlined absolute bottom-4 right-4 text-9xl text-on-surface/5 -rotate-12 pointer-events-none">trending_up</span>
         </GlassPanel>
@@ -129,23 +102,14 @@ const Products = () => {
           <div className="flex justify-between items-start mb-6 z-10">
             <div className="font-label-md text-on-surface-variant bg-surface-container-high px-3 py-1 rounded">P-04</div>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_8px_rgba(6,182,212,0.6)]"></span>
-              <span className="font-label-md text-on-surface uppercase text-xs">Design Phase</span>
+              <span className="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span>
+              <span className="font-label-md text-on-surface uppercase text-xs ml-2">In Development</span>
             </div>
           </div>
           <h3 className="font-headline-md text-on-surface mb-2 z-10">Xcommerce</h3>
-          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">B2B institutional trading gateway specifically architected for cross-continental supply chain liquidity.</p>
+          <p className="font-body-md text-on-surface-variant mb-8 flex-grow z-10">Ghana's organic-first marketplace where every purchase simultaneously builds equity in GSE-listed Ghanaian companies. Commerce as wealth creation — not extraction.</p>
           <div className="border-t border-outline-variant/30 pt-4 z-10">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Target TAM</div>
-                <div className="font-body-lg text-secondary">$22.4B</div>
-              </div>
-              <div>
-                <div className="font-label-md text-on-surface-variant uppercase text-xs mb-1">Integration</div>
-                <div className="font-body-md text-on-surface">Fin-Wrapped</div>
-              </div>
-            </div>
+            <p className="font-label-md text-sm text-secondary/80 italic">Integration: Xlevy pipeline · Xvends physical network · Finly seller tools</p>
           </div>
           <span className="material-symbols-outlined absolute bottom-4 right-4 text-9xl text-on-surface/5 -rotate-12 pointer-events-none">local_shipping</span>
         </GlassPanel>

@@ -2,8 +2,8 @@
 
 import createGlobe from "cobe";
 import type { COBEOptions } from "cobe";
-import { useCallback, useEffect, useRef, useState } from "react";
-
+import { useCallback, useEffect, useRef } from "react";
+import { useSpring } from "react-spring";
 import { cn } from "@/lib/utils";
 
 const GLOBE_CONFIG: Omit<COBEOptions, "width" | "height"> = {
@@ -37,7 +37,16 @@ export function Globe({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
-  const [r, setR] = useState(0);
+
+  const [{ r }, api] = useSpring(() => ({
+    r: 0,
+    config: {
+      mass: 1,
+      tension: 280,
+      friction: 40,
+      precision: 0.001,
+    },
+  }));
 
   const updatePointerInteraction = (value: number | null) => {
     pointerInteracting.current = value;
@@ -50,7 +59,7 @@ export function Globe({
     if (pointerInteracting.current !== null) {
       const delta = clientX - pointerInteracting.current;
       pointerInteractionMovement.current = delta;
-      setR(delta / 200);
+      api.start({ r: delta / 200 });
     }
   };
 
@@ -59,7 +68,7 @@ export function Globe({
 
     (state: Record<string, any>) => {
       if (pointerInteracting.current === null) phi += 0.005;
-      state.phi = phi + r;
+      state.phi = phi + r.get();
       state.width = width * 2;
       state.height = width * 2;
     },
