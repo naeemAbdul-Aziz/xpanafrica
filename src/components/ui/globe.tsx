@@ -56,7 +56,7 @@ export function Globe({
 
   const onRender = useCallback(
     (state: Record<string, unknown>) => {
-      if (!pointerInteracting.current) phiRef.current += 0.005;
+      if (pointerInteracting.current === null) phiRef.current += 0.005;
       state.phi = phiRef.current + r;
       state.width = widthRef.current * 2;
       state.height = widthRef.current * 2;

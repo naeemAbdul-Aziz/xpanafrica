@@ -22,8 +22,8 @@ const Ecosystem = () => {
         </div>
 
         {/* Globe Visualization */}
-        <div className="flex-1 w-full relative flex items-center justify-center overflow-hidden min-h-[400px]">
-          <Globe className="top-8 opacity-80" />
+        <div className="flex-1 w-full relative flex items-center justify-center overflow-hidden min-h-[400px] h-[400px] md:h-[600px] lg:h-[700px] rounded-lg">
+          <Globe className="top-8 md:top-16 opacity-80" />
           <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(16,20,21,0.2),rgba(16,20,21,0.8))]" />
         </div>
       </div>
