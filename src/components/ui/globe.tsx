@@ -2,8 +2,8 @@
 
 import createGlobe from "cobe";
 import type { COBEOptions } from "cobe";
-import { useCallback, useEffect, useRef } from "react";
-import { useSpring } from "react-spring";
+import { useCallback, useEffect, useRef, useState } from "react";
+
 import { cn } from "@/lib/utils";
 
 const GLOBE_CONFIG: Omit<COBEOptions, "width" | "height"> = {
@@ -25,6 +25,16 @@ const GLOBE_CONFIG: Omit<COBEOptions, "width" | "height"> = {
   ],
 };
 
+type GlobeRenderState = {
+  phi: number;
+  width: number;
+  height: number;
+};
+
+type GlobeOptions = COBEOptions & {
+  onRender: (state: GlobeRenderState) => void;
+};
+
 export function Globe({
   className,
   config = GLOBE_CONFIG,
@@ -32,21 +42,12 @@ export function Globe({
   className?: string;
   config?: Omit<COBEOptions, "width" | "height">;
 }) {
-  let phi = 0;
-  let width = 0;
+  const phiRef = useRef(0);
+  const widthRef = useRef(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
-
-  const [{ r }, api] = useSpring(() => ({
-    r: 0,
-    config: {
-      mass: 1,
-      tension: 280,
-      friction: 40,
-      precision: 0.001,
-    },
-  }));
+  const [r, setR] = useState(0);
 
   const updatePointerInteraction = (value: number | null) => {
     pointerInteracting.current = value;
@@ -59,46 +60,50 @@ export function Globe({
     if (pointerInteracting.current !== null) {
       const delta = clientX - pointerInteracting.current;
       pointerInteractionMovement.current = delta;
-      api.start({ r: delta / 200 });
+      setR(delta / 200);
     }
   };
 
-
   const onRender = useCallback(
-
-    (state: Record<string, any>) => {
-      if (pointerInteracting.current === null) phi += 0.005;
-      state.phi = phi + r.get();
-      state.width = width * 2;
-      state.height = width * 2;
+    (state: GlobeRenderState) => {
+      if (pointerInteracting.current === null) phiRef.current += 0.005;
+      state.phi = phiRef.current + r;
+      state.width = widthRef.current * 2;
+      state.height = widthRef.current * 2;
     },
     [r],
   );
 
-  const onResize = () => {
+  const onResize = useCallback(() => {
     if (canvasRef.current) {
-      width = canvasRef.current.offsetWidth;
+      widthRef.current = canvasRef.current.offsetWidth;
     }
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", onResize);
     onResize();
 
-    const globe = createGlobe(canvasRef.current!, {
-      ...config,
-      width: width * 2,
-      height: width * 2,
-      onRender,
+    if (!canvasRef.current) return;
 
-    } as any);
+    const globe = createGlobe(canvasRef.current, {
+      ...config,
+      width: widthRef.current * 2,
+      height: widthRef.current * 2,
+      onRender,
+    } as GlobeOptions);
 
     setTimeout(() => {
-        if(canvasRef.current) canvasRef.current.style.opacity = "1";
-    });
-    return () => globe.destroy();
+      if (canvasRef.current) {
+        canvasRef.current.style.opacity = "1";
+      }
+    }, 0);
 
-  }, []);
+    return () => {
+      globe.destroy();
+      window.removeEventListener("resize", onResize);
+    };
+  }, [config, onRender, onResize]);
 
   return (
     <div
