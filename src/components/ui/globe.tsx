@@ -32,8 +32,8 @@ export function Globe({
   className?: string;
   config?: Omit<COBEOptions, "width" | "height">;
 }) {
-  let phi = 0;
-  let width = 0;
+  const phiRef = useRef(0);
+  const widthRef = useRef(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
@@ -54,42 +54,46 @@ export function Globe({
     }
   };
 
-
   const onRender = useCallback(
-
-    (state: Record<string, any>) => {
-      if (pointerInteracting.current === null) phi += 0.005;
-      state.phi = phi + r;
-      state.width = width * 2;
-      state.height = width * 2;
+    (state: Record<string, unknown>) => {
+      if (pointerInteracting.current === null) phiRef.current += 0.005;
+      state.phi = phiRef.current + r;
+      state.width = widthRef.current * 2;
+      state.height = widthRef.current * 2;
     },
     [r],
   );
 
-  const onResize = () => {
+  const onResize = useCallback(() => {
     if (canvasRef.current) {
-      width = canvasRef.current.offsetWidth;
+      widthRef.current = canvasRef.current.offsetWidth;
     }
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", onResize);
     onResize();
 
-    const globe = createGlobe(canvasRef.current!, {
-      ...config,
-      width: width * 2,
-      height: width * 2,
-      onRender,
+    if (!canvasRef.current) return;
 
-    } as any);
+    const globe = createGlobe(canvasRef.current, {
+      ...config,
+      width: widthRef.current * 2,
+      height: widthRef.current * 2,
+      onRender,
+    } as unknown as COBEOptions);
 
     setTimeout(() => {
-        if(canvasRef.current) canvasRef.current.style.opacity = "1";
+      if (canvasRef.current) {
+        canvasRef.current.style.opacity = "1";
+      }
     });
-    return () => globe.destroy();
 
-  }, []);
+    return () => {
+      globe.destroy();
+      window.removeEventListener("resize", onResize);
+    };
+  }, [config, onRender, onResize]);
 
   return (
     <div
