@@ -25,6 +25,16 @@ const GLOBE_CONFIG: Omit<COBEOptions, "width" | "height"> = {
   ],
 };
 
+type GlobeRenderState = {
+  phi: number;
+  width: number;
+  height: number;
+};
+
+type GlobeOptions = COBEOptions & {
+  onRender: (state: GlobeRenderState) => void;
+};
+
 export function Globe({
   className,
   config = GLOBE_CONFIG,
@@ -55,7 +65,7 @@ export function Globe({
   };
 
   const onRender = useCallback(
-    (state: Record<string, unknown>) => {
+    (state: GlobeRenderState) => {
       if (pointerInteracting.current === null) phiRef.current += 0.005;
       state.phi = phiRef.current + r;
       state.width = widthRef.current * 2;
@@ -81,7 +91,7 @@ export function Globe({
       width: widthRef.current * 2,
       height: widthRef.current * 2,
       onRender,
-    } as unknown as COBEOptions);
+    } as GlobeOptions);
 
     setTimeout(() => {
       if (canvasRef.current) {
