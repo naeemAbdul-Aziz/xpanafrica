@@ -87,7 +87,7 @@ export function Globe({
       if (canvasRef.current) {
         canvasRef.current.style.opacity = "1";
       }
-    });
+    }, 0);
 
     return () => {
       globe.destroy();
